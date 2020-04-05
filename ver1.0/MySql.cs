@@ -19,7 +19,7 @@ namespace ver1._0
         public MySqlConnection OnConInf()
         {
             //远程服务器信息
-            string constr = "server=106.13.204.223;Database=Reg;Uid=Reg;password=@gkl508";
+            string constr = "server=;Database=;Uid=;password=";
             return new MySqlConnection(constr);
         }
     }
@@ -34,7 +34,7 @@ namespace ver1._0
         {
             try
             {
-                string mysqlInfo = "server=database-1.csnquqztldom.ap-southeast-1.rds.amazonaws.com;User Id=HIS;password=123456;Database=HIS;";
+                string mysqlInfo = "server=;User Id=;password=;Database=;";
                 conn = new MySqlConnection(mysqlInfo);
                 conn.Open();
                 return true;
