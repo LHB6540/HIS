@@ -45,6 +45,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -220,6 +221,15 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "确认密码";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(269, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(401, 12);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "医生注册请管理员自行根据数据库导入的医生工号通过数据库进行用户注册";
+            // 
             // sighIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -227,6 +237,7 @@
             this.BackgroundImage = global::ver1._0.Properties.Resources._2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(706, 384);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox1);
@@ -269,5 +280,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
     }
 }

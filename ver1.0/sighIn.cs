@@ -43,7 +43,7 @@ namespace ver1._0
             {
                 MessageBox.Show("请填写性别");
             }
-            else if(textBox5.Text=="")
+            else if (textBox5.Text == "")
             {
                 MessageBox.Show("请填写联系方式");
             }
@@ -55,22 +55,26 @@ namespace ver1._0
             {
                 MessageBox.Show("请选择职位类别");
             }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                MessageBox.Show("暂不支持医生注册");
+            }
             else
             {
                 string type = (comboBox1.SelectedIndex + 1).ToString();
                 md5 jiami = new md5();
-                string hadjiami= jiami.md5_passwd(textBox4.Text);
+                string hadjiami = jiami.md5_passwd(textBox4.Text);
 
-                string query = " SELECT COUNT(*) FROM user WHERE type='"+type+"'";
+                string query = " SELECT COUNT(*) FROM user WHERE type='" + type + "'";
 
                 mySql sql = new mySql();
-                int num=sql.count(query)+1;
+                int num = sql.count(query) + 1;
 
                 string gonghao = "0" + type + num.ToString();
 
-                query = "INSERT INTO user (`name`, `passwd`,`realname`,`sex`,`type`,`date`,`phone`) VALUES ('" + gonghao + "', '" + hadjiami + "','"+textBox2.Text+"','"+textBox3.Text+"','"+type+"','"+dateTimePicker1.Value.Date.ToString()+"','"+textBox5.Text+"');";
+                query = "INSERT INTO user (`name`, `passwd`,`realname`,`sex`,`type`,`date`,`phone`) VALUES ('" + gonghao + "', '" + hadjiami + "','" + textBox2.Text + "','" + textBox3.Text + "','" + type + "','" + dateTimePicker1.Value.Date.ToString() + "','" + textBox5.Text + "');";
 
-                bool result=sql.addDate(query);
+                bool result = sql.addDate(query);
 
                 if (result)
                 {
@@ -81,7 +85,7 @@ namespace ver1._0
                 {
                     MessageBox.Show("注册失败，请重试");
                 }
-             
+
             }
 
 
