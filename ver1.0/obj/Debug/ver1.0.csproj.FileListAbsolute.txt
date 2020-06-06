@@ -384,3 +384,386 @@ C:\Users\65409\Desktop\4.4(界面修改版)\4.4(修改版)\ver1.0\ver1.0\obj\Deb
 C:\Users\65409\Desktop\4.4(界面修改版)\4.4(修改版)\ver1.0\ver1.0\obj\Debug\ver1._0.ChangePasswd.resources
 C:\Users\65409\Desktop\4.4(界面修改版)\4.4(修改版)\ver1.0\ver1.0\obj\Debug\ver1._0.Sigh.resources
 C:\Users\65409\Desktop\4.4(界面修改版)\4.4(修改版)\ver1.0\ver1.0\obj\Debug\ver1._0.registrationSystem.resources
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\ver1.0.pdb
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\EnvDTE.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\EnvDTE80.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\VSLangProj.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\stdole.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.MSXML.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\StreamJsonRpc.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.xml
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Shell.15.0.resources.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.csprojAssemblyReference.cache
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\Interop.SpeechLib.dll
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.csproj.ResolveComReference.cache
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.ChangePasswd.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.打印CT申请单.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.打印MR申请单.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.打印检验单.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.Sigh.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.registrationSystem.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.Properties.Resources.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.csproj.GenerateResource.cache
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.csproj.CoreCompileInputs.cache
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.csproj.CopyComplete
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.pdb
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.choose.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.doctorWorkstation.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.sighIn.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.pharmacyManagement.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.outpatientPayment.resources
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS\ver1.0\bin\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.chooseMa.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.printReg.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.printPay.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.printRegRec.resources
+C:\Users\65409\Desktop\HIS\ver1.0\obj\Debug\ver1._0.printCS.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\ver1.0.pdb
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\EnvDTE.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\EnvDTE80.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\VSLangProj.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\stdole.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.MSXML.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\StreamJsonRpc.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.xml
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Shell.15.0.resources.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.csprojAssemblyReference.cache
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\Interop.SpeechLib.dll
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.ResolveComReference.cache
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.changePasswd.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.chooseMa.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.doctorWorkstation.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.打印CT申请单.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.打印MR申请单.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.printPay.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.打印检验单.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.printRegRec.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.printCS.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.sighIn.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.sigh.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.registrationSystem.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.printReg.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.Properties.Resources.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.pharmacyManagement.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.choose.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.outpatientPayment.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1._0.inputMed.resources
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.GenerateResource.cache
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CoreCompileInputs.cache
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CopyComplete
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS 源码（+药品入库）\HIS 源码\ver1.0\obj\Debug\ver1.0.pdb
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.csprojAssemblyReference.cache
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.config
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\Interop.SpeechLib.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.ResolveComReference.cache
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.exe
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.pdb
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.changePasswd.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.chooseMa.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.doctorWorkstation.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printCT.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printMR.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printPay.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printHY.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printRegRec.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printCS.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.sighIn.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.sigh.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.registrationSystem.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.printReg.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.Properties.Resources.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.pharmacyManagement.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.choose.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.outpatientPayment.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1._0.inputMed.resources
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.GenerateResource.cache
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CoreCompileInputs.cache
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.config
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.manifest
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\ver1.0.application
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\ver1.0.exe
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\ver1.0.pdb
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\EnvDTE.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\EnvDTE80.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\VSLangProj.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\stdole.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.MSXML.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\StreamJsonRpc.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.xml
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Shell.15.0.resources.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.manifest
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.application
+C:\Users\DL\Desktop\HIS 源码+界面调整\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CopyComplete
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\ver1.0.pdb
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\EnvDTE.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\EnvDTE80.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\VSLangProj.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\stdole.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.MSXML.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\StreamJsonRpc.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Data.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Package.LanguageService.15.0.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.Data.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Text.UI.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Language.Intellisense.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Editor.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.VisualStudio.Validation.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\Microsoft.Data.ConnectionUI.xml
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Shell.15.0.resources.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Services.resources.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.csprojAssemblyReference.cache
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.config
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\Interop.SpeechLib.dll
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.ResolveComReference.cache
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.changePasswd.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.chooseMa.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.doctorWorkstation.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printCT.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printMR.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printPay.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printHY.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printRegRec.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printCS.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.sighIn.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.sigh.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.registrationSystem.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.printReg.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.Properties.Resources.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.pharmacyManagement.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.choose.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.outpatientPayment.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1._0.inputMed.resources
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.GenerateResource.cache
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CoreCompileInputs.cache
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.exe.manifest
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.application
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.csproj.CopyComplete
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.exe
+C:\Users\65409\Desktop\HIS 源码+界面再微调(1)\HIS 源码+界面再微调\HIS 源码\ver1.0\obj\Debug\ver1.0.pdb

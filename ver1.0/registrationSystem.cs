@@ -21,1056 +21,967 @@ using System.Speech.Recognition;
 
 namespace ver1._0
 {
-    
+
     public partial class registrationSystem : Form
     {
+        mySql sql = new mySql();
+        string doctorId = "";
+        string[] regIDShuzu = new string[20];
+        int signalToPrint = 0;
         //主窗体
         public registrationSystem()
         {
             InitializeComponent();
         }
-        
-        //点击选项时查询并添加科室类别
-      
-        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+
+        //清屏诊疗卡、冻结及不可视化按钮
+        void clear()
         {
-            comboBox1.Items.Clear();
-            OC choosed = new OC();
-            MySqlConnection conn = null;
-            MySqlCommand command = null;
-            MySqlDataReader mdr = null;
-            string sql = "SELECT DISTINCT Cod FROM `DoctorInfo` WHERE 1";
-            try
-            {
-                conn = choosed.OnConInf();
-                command = new MySqlCommand(sql, conn);
-                conn.Open();
-                mdr = command.ExecuteReader();
-                while (mdr.Read())
-                {
-                    string cod = mdr["Cod"].ToString();
-                    comboBox1.Items.Add(cod);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("医生数据库连接异常");
-            }
-            finally
-            { conn.Close(); }
+            status = 0;
+            cardNum.Clear();
+            paName.Clear();
+            paSex.Clear();
+            paBorth.Value = System.DateTime.Now;
+            paAge.Clear();
+            paPhone.Clear();
+            paIDType.SelectedIndex = 0;
+            paID.Clear();
+            paAddress.Clear();
+            paAllergy.Clear();
+            buttonSearch.Visible = false;
+            buttonSearch.Enabled = false;
+            buttonChange.Visible = false;
+            buttonChange.Enabled = false;
+            buttonNew.Visible = false;
+            buttonNew.Enabled = false;
         }
 
-        //点击选项时查询并添加科室
-        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        //清屏挂号、冻结及不可视化按钮
+        void clearReg()
         {
-            comboBox2.Items.Clear();
-            string cod = comboBox1.SelectedItem.ToString();
-            OC chooseCate = new OC();
-            MySqlConnection conn = null;
-            MySqlCommand command = null;
-            MySqlDataReader mdr = null;
-            string sql = "SELECT DISTINCT Cate FROM `DoctorInfo` WHERE `Cod` = '" + cod + "'";
-            try
-            {
-                conn = chooseCate.OnConInf();
-                command = new MySqlCommand(sql, conn);
-                conn.Open();
-                mdr = command.ExecuteReader();
-                while (mdr.Read())
-                {
-                    string cate = mdr["Cate"].ToString();
-                    comboBox2.Items.Add(cate);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("医生数据库连接异常");
-            }
-            finally
-            { conn.Close(); }
-
-        }
-
-        //点击选项时根据前两项添加医生
-        private void comboBox3_MouseClick(object sender, MouseEventArgs e)
-        {
-
-            if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
-            { }
-            else
-            {
-                comboBox3.Items.Clear();
-                string cod = comboBox1.SelectedItem.ToString();
-                string cate = comboBox2.SelectedItem.ToString();
-                OC chooseDname = new OC();
-                MySqlConnection conn = null;
-                MySqlCommand command = null;
-                MySqlDataReader mdr = null;
-                string sql = "SELECT Dname FROM `DoctorInfo` WHERE `Cod` = '" + cod + "' AND `Cate` = '" + cate + "'";
-                try
-                {
-                    conn = chooseDname.OnConInf();
-                    command = new MySqlCommand(sql, conn);
-                    conn.Open();
-                    mdr = command.ExecuteReader();
-                    while (mdr.Read())
-                    {
-                        string dnaem = mdr["Dname"].ToString();
-                        comboBox3.Items.Add(dnaem);
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("医生数据库连接异常");
-                }
-                finally
-                { conn.Close(); }
-            }
-        }
-
-        //根据前三项信息确定唯一的医生ID和挂号级别,mysql未知bug，第三个筛选条件不能用=，只能使用like代替
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (clearint == 1)
-            { }
-            else
-            {
-                if (comboBox2.SelectedIndex == -1)
-                {
-
-                }
-                else
-                {
-                    textBox2.Enabled = true;
-                    textBox3.Enabled = true;
-                    textBox2.Clear();
-                    textBox3.Clear();
-                    comboBox5.Enabled = true;
-                    string cod = comboBox1.SelectedItem.ToString();
-                    string cate = comboBox2.SelectedItem.ToString();
-                    string name = comboBox3.SelectedItem.ToString();
-                    OC chooseDname = new OC();
-                    MySqlConnection conn = null;
-                    MySqlCommand command = null;
-                    MySqlDataReader mdr = null;
-                    string sql = "SELECT * FROM `DoctorInfo` WHERE `Cod` = '" + cod + "' AND `Cate` = '" + cate + "' AND `Dname` LIKE '" + name + "'";
-                    try
-                    {
-
-                        conn = chooseDname.OnConInf();
-                        command = new MySqlCommand(sql, conn);
-                        conn.Open();
-                        mdr = command.ExecuteReader();
-                        //textBox2.Text = "ceshi";
-                        while (mdr.Read())
-                        {
-                            string did = mdr["Did"].ToString();
-                            string lev = mdr["Dlev"].ToString();
-                            textBox2.Text = did;
-                            textBox3.Text = lev;
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("医生数据库连接异常");
-                    }
-                    finally
-                    { conn.Close(); }
-                    textBox2.Enabled = false;
-                    textBox3.Enabled = false;
-                }
-            }
-        }
-
-        //根据当前医生信息和日期选择进行挂号情况判断
-        private void comboBox5_MouseClick(object sender, MouseEventArgs e)
-        {
-            comboBox5.Items.Clear();
-            //string cod = comboBox1.SelectedItem.ToString();
-            //string cate = comboBox2.SelectedItem.ToString();
-            //string name = comboBox3.SelectedItem.ToString();
-            string id = textBox2.Text;
-            OC getduty = new OC();
-            MySqlConnection conn = null;
-            MySqlCommand command = null;
-            MySqlDataReader mdr = null;
-            string sql = "SELECT COUNT(*) FROM `Duty` WHERE `Did` = '" + id + "' AND `Date`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-            string sqlcancount = "SELECT COUNT(*) FROM `Duty` WHERE `Did` = '" + id + "' AND  `Statu` ='0'  AND `Date`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-            string sqlcan = "SELECT Time FROM `Duty` WHERE `Did` = '" + id + "' AND  `Statu` ='0'  AND `Date`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-            try
-            {
-                textBox1.Clear();
-                conn = getduty.OnConInf();
-                command = new MySqlCommand(sql, conn);
-                conn.Open();
-                string num = command.ExecuteScalar().ToString();
-                //textBox1.Text = num;
-                conn.Close();
-                if (num == "0")
-                {
-                    comboBox5.Items.Clear();
-                    textBox11.Text = "不开诊";
-                    comboBox5.Enabled = false;
-                    checkBox1.Enabled = false;
-                    textBox1.Enabled = false;
-                }
-                else
-                {
-                    textBox5.Clear();
-                    textBox11.Text = "开诊";
-                    checkBox1.Enabled = true;
-                    //textBox1.Enabled = true;
-                    comboBox5.Enabled = true;
-                    comboBox5.Items.Clear();
-                    command = new MySqlCommand(sqlcancount, conn);
-                    conn.Open();
-                    if (command.ExecuteScalar().ToString() == "0")
-                    {
-                        comboBox5.Items.Clear();
-                        comboBox5.Text = "当前医生当天号已满"; textBox13.Clear(); textBox13.Text = "0";
-                        comboBox5.Enabled = false;
-                        conn.Close();
-                        sqlcancount = "SELECT COUNT(*) FROM `Duty` WHERE `Did` = '" + id + "' AND  `Statu` ='1'  AND `Date`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-                        command = new MySqlCommand(sqlcancount, conn);
-                        conn.Open();
-                        textBox12.Clear();
-                        textBox12.Text = command.ExecuteScalar().ToString();
-                    }
-                    else
-                    {
-                        textBox13.Clear();
-                        textBox13.Text = command.ExecuteScalar().ToString();
-                        conn.Close();
-
-                        command = new MySqlCommand(sqlcan, conn);
-                        conn.Open();
-                        comboBox5.Text = "";
-
-                        mdr = command.ExecuteReader();
-                        while (mdr.Read())
-                        {
-                            string time = mdr["Time"].ToString();
-                            comboBox5.Items.Add(time);
-                        }
-
-                        conn.Close();
-                        sqlcancount = "SELECT COUNT(*) FROM `Duty` WHERE `Did` = '" + id + "' AND  `Statu` ='1'  AND `Date`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-                        command = new MySqlCommand(sqlcancount, conn);
-                        conn.Open();
-                        textBox12.Clear();
-                        textBox12.Text = command.ExecuteScalar().ToString();
-
-                    }
-                }
-
-            }
-            catch
-            { }
-            finally
-            { conn.Close(); }
-
-        }
-        //加号选项
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true)
-                textBox1.Enabled = true;
-            else
-                textBox1.Enabled = false;
-        }
-
-        //修复直接选科室崩溃的bug
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex == -1)
-                comboBox2.Enabled = false;
-            else
-                comboBox2.Enabled = true;
-
+            status = 0;
+            regClassType.Enabled = regDateTimePicker.Enabled = regClass.Enabled = regRemainNum.Enabled = regLevel.Enabled
+           = regPayType.Enabled = regCostType.Enabled = regDoctor.Enabled = regID.Enabled = regIfWork.Enabled = false;
+            regSearchButton.Enabled = cancelRegButton.Enabled = makeRegButton.Enabled =  false;
+            regSearchButton.Visible = cancelRegButton.Visible = makeRegButton.Visible =  false;
+            regClass.SelectedIndex = regClassType.SelectedIndex = regLevel.SelectedIndex = regDoctor.SelectedIndex = -1; timeChoose.SelectedIndex = -1;
+            regClassType.Text = regClass.Text = regLevel.Text = regDoctor.Text = regCostType.Text = ""; regID.Text = "";
+            timeChoose.Text = "";
         }
 
 
-
-
-
-
-
-
-
-
-
-
-        //病历号自动查询以及修改
-        //病历号当前状态判断标识符
-        public static int IsMakeup = 0;
-        //生成病历号
-        private void button1_Click(object sender, EventArgs e)
-        {
-            IsMakeup = 1;
-            string ID = System.DateTime.Now.ToString("yyyyMMddHHmmss");
-            textBox4.Text = ID;
-            //IsMakeup = 0;
-
-        }
-        //自动查询已存在的病历号信息
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            string idnum = textBox4.Text;
-            int len = idnum.Length;
-            if (len <= 13)
-            {
-                Console.WriteLine("donothing");
-                textBox5.Clear(); textBox6.Clear(); textBox7.Clear();
-                textBox8.Clear(); textBox9.Clear(); textBox10.Clear();
-            }
-            else
-            {
-                if (IsMakeup == 0)
-                {
-                    textBox5.Clear(); textBox6.Clear(); textBox7.Clear();
-                    textBox8.Clear(); textBox9.Clear(); textBox10.Clear();
-
-                    string Pid = textBox4.Text;
-                    OC getPinfo = new OC();
-                    MySqlConnection conn = null;
-                    MySqlCommand command = null;
-                    MySqlDataReader mdr = null;
-                    string sql = "SELECT COUNT(*) FROM `Pinfo` WHERE `Pid` = '" + Pid + "'";
-                    string sqlget = "SELECT * FROM `Pinfo` WHERE `Pid` = '" + Pid + "'";
-                    try
-                    {
-                        conn = getPinfo.OnConInf();
-                        command = new MySqlCommand(sql, conn);
-                        conn.Open();
-                        string num = command.ExecuteScalar().ToString();
-                        if (num == "0")
-                        {
-                            if (IsMakeup == 0)
-                            {
-                                MessageBox.Show("未查询到此病历号，请确认病历号是否填写正确");
-                            }
-                        }
-
-                        else
-                        {
-                            conn.Close();
-                            command = new MySqlCommand(sqlget, conn);
-                            conn.Open();
-                            mdr = command.ExecuteReader();
-
-                            while (mdr.Read())
-                            {
-                                string pname = mdr["Pname"].ToString(); textBox5.Text = pname;
-                                string ps = mdr["Ps"].ToString(); textBox7.Text = ps;
-                                string pbo = mdr["PBo"].ToString(); dateTimePicker2.Value = Convert.ToDateTime(pbo);
-                                string page = mdr["Page"].ToString(); textBox8.Text = page;
-                                string pcall = mdr["Pcall"].ToString(); textBox9.Text = pcall;
-                                string ptype = mdr["Ptype"].ToString(); 
-                                if (ptype == "1") { comboBox4.SelectedIndex = 0; }
-                                else if (ptype == "2") { comboBox4.SelectedIndex = 1; }
-                                else if (ptype == "3") { comboBox4.SelectedIndex = 2; }
-                                else if (ptype == "4") { comboBox4.SelectedIndex = 3; }
-
-                                string pnum = mdr["Pnum"].ToString(); textBox6.Text = pnum;
-                                string paddress = mdr["Paddress"].ToString(); textBox10.Text = paddress;
-                                IsMakeup = 0;
-
-                            }
-
-                        }
-                    }
-                    catch
-                    { }
-                    finally
-                    {
-                        conn.Close();
-
-                    }
-
-
-                }
-                else if (IsMakeup == 1)
-                {
-                    textBox5.Clear(); textBox6.Clear(); textBox7.Clear();
-                    textBox8.Clear(); textBox9.Clear(); textBox10.Clear();
-                    //IsMakeup = 0;
-                }
-
-            }
-        }
-        //病历号信息更新或保存
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox4.Text.Length < 13)
-                MessageBox.Show("病历号不符合要求，您可能（1）修改了生成的病历号（2）手动输入了错误的病历号");
-            else
-            {
-                if (IsMakeup == 0)
-                {
-                    string Pid = textBox4.Text;
-                    OC getPinfo = new OC();
-                    MySqlConnection conn = null;
-                    MySqlCommand command = null;
-                    //MySqlDataReader mdr = null;
-                    int type = comboBox4.SelectedIndex + 1;
-                    string sql = "SELECT COUNT(*) FROM `Pinfo` WHERE `Pid` = '" + Pid + "'";
-                    string sqlupdata = "UPDATE `Pinfo` SET `Pname`='" + textBox5.Text + "',`Ps`='" + textBox7.Text + "',`PBo`='" + dateTimePicker2.Value.ToString() + "',`Page`='" + textBox8.Text + "',`Pcall`='" + textBox9.Text + "',`Ptype`='" +type+ "',`Pnum`='" + textBox6.Text + "',`Paddress`='" + textBox10.Text + "' WHERE `Pid`='" + textBox4.Text + "'";
-                    try
-                    {
-                        conn = getPinfo.OnConInf();
-                        command = new MySqlCommand(sql, conn);
-                        conn.Open();
-                        string num = command.ExecuteScalar().ToString();
-                        if (num == "0")
-                        { MessageBox.Show("未查询到此病历号，请确认病历号是否填写正确或者确认是否需要生成需要新的病历号"); }
-                        else
-                        {
-                            conn.Close();
-                            command = new MySqlCommand(sqlupdata, conn);
-                            conn.Open();
-                            int sta = command.ExecuteNonQuery();
-                            if (sta == 1)
-                                MessageBox.Show("此病历号相关信息更新成功");
-                                
-
-                        }
-                    }
-                    catch
-                    {
-
-                        MessageBox.Show("更新失败，请联系管理员");
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                }
-                else if (IsMakeup == 1)
-                {
-                    string Pid = textBox4.Text;
-                    OC getPinfo = new OC();
-                    MySqlConnection conn = null;
-                    MySqlCommand command = null;
-                    string sql = "SELECT COUNT(*) FROM `Pinfo` WHERE `Pid` = '" + Pid + "'";
-                    string sqlupdata = "UPDATE `Pinfo` SET `Pname`='" + textBox5.Text + "',`Ps`='" + textBox7.Text + "',`PBo`='" + dateTimePicker2.Value.ToString() + "',`Page`='" + textBox8.Text + "',`Pcall`='" + textBox9.Text + "',`Ptype`='" + comboBox4.SelectedIndex + 1 + "',`Pnum`='" + textBox6.Text + "',`Paddress`='" + textBox10.Text + "' WHERE `Pid`='" + textBox4.Text + "'";
-                    string sqlins = " INSERT INTO `Pinfo`(`Pid`, `Pname`, `Ps`, `PBo`, `Page`, `Pcall`, `Ptype`, `Pnum`, `Paddress`) VALUES('" + Pid + "','" + textBox5.Text + "','" + textBox7.Text + "','" + dateTimePicker2.Value.ToString() + "','" + textBox8.Text + "','" + textBox9.Text + "','" + comboBox4.SelectedIndex + 1 + "','" + textBox6.Text + "','" + textBox10.Text + "')";
-                    try
-                    {
-                        conn = getPinfo.OnConInf();
-                        command = new MySqlCommand(sql, conn);
-                        conn.Open();
-                        string num = command.ExecuteScalar().ToString();
-                        if (num != "0")
-                        { MessageBox.Show("此病历号已存在，可能存在并发生成病历号的情况，请重新生成病历号，如仍未解决，请联系管理员"); }
-                        else
-                        {
-                            conn.Close();
-                            command = new MySqlCommand(sqlins, conn);
-                            conn.Open();
-                            int sta = command.ExecuteNonQuery();
-                            if (sta == 1)
-                                MessageBox.Show("新的病历号信息保存成功");
-
-
-                        }
-                    }
-                    catch { }
-                    finally
-                    {
-                        conn.Close();
-                        IsMakeup = 0;
-                    }
-                    IsMakeup = 0;
-                }
-            }
-        }
-
-
-        //结算挂号类别自动选取
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox3.Text == "普通")
-                comboBox7.SelectedIndex = 0;
-            else if (textBox3.Text == "主任医师")
-                comboBox7.SelectedIndex = 1;
-            else if (textBox3.Text == "教授")
-                comboBox7.SelectedIndex = 2;
-            else if (textBox3.Text == "副教授")
-                comboBox7.SelectedIndex = 3;
-
-        }
-
-        public static double get = 0;
-        public static double guahao = 0;
-        public static double feibie = 0;
-        public static double idbuy = 0;
-        //计费相关项更新自动更新计费
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox7.SelectedIndex == 0)
-                guahao = 2;
-            else
-                guahao = 5;
-
-            get = guahao + feibie + idbuy;
-            textBox14.Text = get.ToString();
-        }
-
-        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox8.SelectedIndex == 0)
-                feibie = 2;
-            else if (comboBox8.SelectedIndex == 1)
-                feibie = 3;
-            else
-                feibie = 10;
-
-            get = guahao + feibie + idbuy;
-            textBox14.Text = get.ToString();
-
-
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox2.Checked == true)
-                idbuy = 1;
-            else idbuy = 0;
-            get = guahao + feibie + idbuy;
-            textBox14.Text = get.ToString();
-
-        }
-        //缴费复查
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-            if (comboBox6.SelectedIndex != -1 & comboBox7.SelectedIndex != -1 & comboBox8.SelectedIndex != -1)
-            {
-                if (textBox14.Text != "" & textBox15.Text != "")
-                    textBox16.Text = (-(Convert.ToDouble(textBox14.Text) - Convert.ToDouble(textBox15.Text))).ToString();
-                if (textBox15.Text == "")
-                {
-                    textBox16.Text = "";
-                }
-            }
-            else
-            {
-                textBox16.Text = "";
-                if (clearint ==0)
-                MessageBox.Show("请填写完整的缴费信息");
-            }
-        }
-        //不开诊状态对计费项的更改
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox11.Text == "不开诊")
-            {
-                comboBox7.SelectedIndex = -1;
-            }
-        }
-
-
-
-
-
-
-
-      
-  
-
-       
-
-        
-
-
-        //打印方法
-        public void print()
-        {
-            //(string No, string Pid, string Pname, string Ps, string type, string level, string dname, string daddress)
-            //this.printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Custum", 210, 297);
-
-            PaperSize p = null;
-            foreach (PaperSize ps in this.printDocument1.PrinterSettings.PaperSizes)
-            {
-                if (ps.PaperName.Equals("A4"))
-                    p = ps;
-            }
-            this.printDocument1.DefaultPageSettings.PaperSize = p;
-            //this.printDocument1.Print();
-
-
-
-
-            this.printDocument1.PrintPage += new PrintPageEventHandler(this.MyPrintDocument_PrintPage);
-
-            /*PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-               printPreviewDialog.Document = printDocument1;
-                lineReader = new StringReader(textBox.Text);
-                
-    
-                        printPreviewDialog.ShowDialog();*/
-               
-
-
-            printPreviewDialog1.Document = printDocument1; 
-            printDocument1.PrinterSettings.Copies = 0;
-            //printDocument1.Print();
-            DialogResult result = printPreviewDialog1.ShowDialog();
-           
-
-
-        }
-        //打印公共参数
-        public static string NoToPrint;
-
-        //打印参数
-        private void MyPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            /*如果需要改变自己 可以在new Font(new FontFamily("黑体"),11）中的“黑体”改成自己要的字体就行了，黑体 后面的数字代表字体的大小
-             System.Drawing.Brushes.Blue , 170, 10 中的 System.Drawing.Brushes.Blue 为颜色，后面的为输出的位置 */
-            e.Graphics.DrawString("挂号单", new Font(new FontFamily("黑体"), 20), System.Drawing.Brushes.Black, 400, 30);
-            e.Graphics.DrawString("流水号:" + NoToPrint, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Blue, 650, 45);
-            //
-            e.Graphics.DrawLine(Pens.Black, 8, 100, 820, 100);
-            e.Graphics.DrawString("ID：" + textBox4.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 150);
-            e.Graphics.DrawString("姓名：" + textBox5.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 200, 150);
-            e.Graphics.DrawString("性别：" + textBox7.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 400, 150);
-            e.Graphics.DrawString("挂号级别：" + textBox3.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 200);
-            e.Graphics.DrawString("挂号科室：" + comboBox2.SelectedItem.ToString(), new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 250);
-            e.Graphics.DrawString("医生：" + comboBox3.SelectedItem.ToString(), new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 200, 250);
-            
-            e.Graphics.DrawString("诊室位置：", new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 400, 250);
-            if (checkBox1.Checked == false)
-            { e.Graphics.DrawString("预约就诊日期" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "  " + comboBox5.SelectedItem.ToString(), new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 300); }
-            else
-                e.Graphics.DrawString("预约就诊日期" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "  " + textBox1.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 300);
-
-            e.Graphics.DrawLine(Pens.Black, 8, 900, 820, 900);
-            //
-            e.Graphics.DrawString("挂号日期：" + System.DateTime.Now.ToString(), new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 950);
-            e.Graphics.DrawString("挂号费：" + textBox14.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 10, 1000);
-            e.Graphics.DrawString("实收：" + textBox15.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 200, 1000);
-            e.Graphics.DrawString("找零：" + textBox16.Text, new Font(new FontFamily("黑体"), 10), System.Drawing.Brushes.Black, 400, 1000);
-
-
-
-
-        }
-
-        //打印
-     
-        //打印所需病历号参数，窗体载入时更改
-        public  void reflashNo()
-        { 
-            string No ="No." +System.DateTime.Now.ToString("yyyyMMddHHmmss");
-            label28.Text = No;
-            NoToPrint = No;
-        }
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            reflashNo();
-        }
-
-
-
-
-
-        SpeechSynthesizer speech = new SpeechSynthesizer();
-        public void SpeechVideo_Read(int rate, int volume, string speektext)  //读
-        {
-        speech.Rate = rate;
-        speech.Volume = volume;
-        speech.SpeakAsync(speektext);
-        }
-
-        //挂号事件
-         private void button3_Click(object sender, EventArgs e)
-        {
-            string num = System.DateTime.Now.ToString("yyyyMMddHHmmss");
-            string did = textBox2.Text; string dname = comboBox3.SelectedItem.ToString();
-            string pid = textBox4.Text; string pname = textBox5.Text;
-            string Ps = textBox7.Text;
-            string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-
-            string type = comboBox1.SelectedItem.ToString() + comboBox2.SelectedItem.ToString();
-            string addtime = textBox1.Text;
-            int isadd = 0;
-            //流水记在另一个流水表中，题目未要求，故未实现
-
-
-
-            if (textBox11.Text == "不开诊")
-                MessageBox.Show("该医生当天不开诊，请更换其他医生");
-            else
-            {
-                if (textBox13.Text != "0")
-                {
-                    if (comboBox5.SelectedIndex == -1)
-                        MessageBox.Show("请选择挂号时段");
-                    else
-                    {
-                        string time = comboBox5.SelectedItem.ToString();
-                        if (textBox15.Text == "")
-                            MessageBox.Show("No pay");
-                        else
-                        {
-                            OC Addreg = new OC();
-                            MySqlConnection conn = null;
-                            MySqlCommand command = null;
-
-                            try
-                            {
-
-
-                                string sqlins = " INSERT INTO `RegInput`(`RegID`, `Did`, `Dname`, `Pid`, `Pname`, `DateTime`, `Type`, `Isadd`) VALUES('" + num + "','" + did + "','" + dname + "','" + pid + "','" + pname + "','" + date + time + "','" + type + "','" + isadd + "' )";
-
-                                conn = Addreg.OnConInf();
-                                command = new MySqlCommand(sqlins, conn);
-                                conn.Open();
-                                int statu = command.ExecuteNonQuery();
-                                if (statu == 1)
-                                {
-                                    MessageBox.Show("挂号成功,如需打印请点击打印按钮");
-                                    tabControl1.SelectedTab = tabPage2;
-                                    showduty();
-                                }
-                            }
-                            catch
-                            {
-                                MessageBox.Show("挂号失败");
-
-                            }
-
-                            finally
-                            {
-                                conn.Close();
-                            }
-
-                            try
-                            {
-                                conn.Close();
-
-                                string sqlupdata = "UPDATE `Duty` SET `Statu`='1' WHERE `Did`='" + did + "' AND `Date`='" + date + "' AND `Time`='" + time + "'";
-                                command = new MySqlCommand(sqlupdata, conn);
-                                conn.Open();
-                                int statu = command.ExecuteNonQuery();
-                                if (statu == 1)
-                                {
-                                    //MessageBox.Show("医生门诊信息更新成功");
-                                    string bobao = "请" + textBox5.Text + "到" + comboBox2.SelectedItem.ToString() + "就诊";
-                                    SpeechVideo_Read(1, 100, bobao);
-                                    button5.Enabled = true;
-
-                                }
-
-                            }
-                            catch
-                            { }
-                            finally
-                            { }
-
-
-
-
-                        }
-
-                    }
-                }
-                else
-                {
-                    if (checkBox1.Checked == false)
-                        MessageBox.Show("当前医生号已满，如有需要请加号");
-                    else
-                    {
-                        isadd = 1;
-                        if (textBox15.Text == "")
-                            MessageBox.Show("未缴纳挂号费用");
-                        else
-                        {
-                            OC Addreg = new OC();
-                            MySqlConnection conn = null;
-                            MySqlCommand command = null;
-
-                            try
-                            {
-
-
-                                string sqlins = " INSERT INTO `RegInput`(`RegID`, `Did`, `Dname`, `Pid`, `Pname`, `DateTime`, `Type`, `Isadd`) VALUES('" + num + "','" + did + "','" + dname + "','" + pid + "','" + pname + "','" + date + addtime + "','" + type + "','" + isadd + "' )";
-
-                                conn = Addreg.OnConInf();
-                                command = new MySqlCommand(sqlins, conn);
-                                conn.Open();
-                                int statu = command.ExecuteNonQuery();
-                                if (statu == 1)
-                                {
-                                    MessageBox.Show("挂号成功，如需打印请点击打印按钮");
-                                    tabControl1.SelectedTab = tabPage2;
-                                    showduty();
-                                }
-                            }
-                            catch
-                            {
-                                MessageBox.Show("挂号失败");
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                            try
-                            {
-                                conn.Close();
-
-                                string sqlupdata = "INSERT INTO `Duty`(`Did`, `Date`, `Time`, `Statu`) VALUES ('" + did + "','" + date + "','" + addtime + "','1')";
-                                command = new MySqlCommand(sqlupdata, conn);
-                                conn.Open();
-                                int statu = command.ExecuteNonQuery();
-                                if (statu == 1)
-                                {
-                                    //MessageBox.Show("医生门诊信息更新成功");
-                                    string bobao = "请" + textBox5.Text + "到" + comboBox2.SelectedItem.ToString() + "就诊";
-                                    SpeechVideo_Read(1, 100, bobao);
-                                    button5.Enabled = true;
-
-                                }
-
-                            }
-                            catch
-                            { }
-                            finally
-                            { }
-
-
-                        }
-                    }
-
-
-                }
-
-            }
-
-            /*private void textBox11_TextChanged(object sender, EventArgs e)
-            {
-               
-            }*/
-        }
-
-
-
-        //tabpage切换事件
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedTab == tabPage1)
-            {
-                showduty();
-            }
-            else
-            {
-                showReg();
-            }
-        }
-        //datagridview关联控件的事件
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            comboBox5.Enabled = true;
-            showduty();
-        }
-        //datagridview 值班
-        public void showduty()
-        {
-            if (textBox2.Text.Length < 10)
-            { }
-            else
-            {
-                tabControl1.SelectedTab = tabPage1;
-                OC oc = new OC();
-
-                MySqlCommand command = null;
-                MySqlDataReader mdr = null;
-                string sql = "SELECT * FROM `Duty` WHERE `Did` = '" + textBox2.Text + "' AND `Date` = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'";
-
-
-                try
-                {
-                    MySqlConnection show = oc.OnConInf();
-                    command = new MySqlCommand(sql, show);
-                    show.Open();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    adapter.SelectCommand = command;
-
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView1.DataSource = table;
-                    dataGridView1.Columns[0].HeaderCell.Value = "医生ID";
-                    dataGridView1.Columns[1].HeaderCell.Value = "开诊日期";
-                    dataGridView1.Columns[2].HeaderCell.Value = "预约时段";
-                    dataGridView1.Columns[3].HeaderCell.Value = "是否已挂号";
-
-                }
-                catch { }
-                finally
-                { }
-            }
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            showduty();
-        }
-        //datagridview 挂号记录
-        public void showReg()
-        {
-           
-            {
-                //tabControl1.SelectedTab = tabPage1;
-                OC oc = new OC();
-
-                MySqlCommand command = null;
-                MySqlDataReader mdr = null;
-                string sql = "SELECT * FROM `RegInput` ORDER BY `RegID` DESC"; 
-
-
-                try
-                {
-                    MySqlConnection show = oc.OnConInf();
-                    command = new MySqlCommand(sql, show);
-                    show.Open();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    adapter.SelectCommand = command;
-
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView2.DataSource = table;
-                    dataGridView2.Columns[0].HeaderCell.Value = "流水号";
-                    dataGridView2.Columns[1].HeaderCell.Value = "医生ID";
-                    dataGridView2.Columns[2].HeaderCell.Value = "医生姓名";
-                    dataGridView2.Columns[3].HeaderCell.Value = "病人ID";
-                    dataGridView2.Columns[4].HeaderCell.Value = "病人姓名姓名";
-                    dataGridView2.Columns[5].HeaderCell.Value = "就诊时间";
-                    dataGridView2.Columns[6].HeaderCell.Value = "就诊科室";
-                    dataGridView2.Columns[7].HeaderCell.Value = "是否加号";
-
-                }
-                catch { }
-                finally
-                { }
-            }
-        }
-
-
-
-        //清屏方法
-        public static int clearint = 0;
-        public void clear()
-        {
-            clearint = 1;
-            textBox15.Clear();
-            comboBox1.SelectedIndex =-1;
-            comboBox2.SelectedIndex = -1;
-            comboBox3.SelectedIndex = -1;
-            comboBox4.SelectedIndex = -1;
-            comboBox5.SelectedIndex = -1;
-            comboBox6.SelectedIndex = -1;
-            comboBox7.SelectedIndex = -1;
-            comboBox8.SelectedIndex = -1;
-            textBox1.Clear();textBox1.Enabled = false;
-            textBox2.Clear(); textBox2.Enabled = false;
-            textBox3.Clear(); textBox3.Enabled = false;
-            textBox11.Clear(); textBox11.Enabled = false;
-            textBox12.Clear(); textBox12.Enabled = false;
-            textBox13.Clear(); textBox13.Enabled = false;
-            checkBox1.Checked = false;
-            checkBox1.Enabled = false;
-
-            IsMakeup = 0;
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox7.Clear();
-            textBox8.Clear();
-            textBox9.Clear();
-            textBox6.Clear();
-            textBox10.Clear();
-            textBox14.Clear();
-
-            checkBox2.Checked = false;
-            clearint = 0;
-
-            button5.Enabled = false;
-
-        }
-
-        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        //菜单栏查询项
+        private void search_Click(object sender, EventArgs e)
         {
             clear();
+            buttonSearch.Visible = true;
+            buttonSearch.Enabled = true;
+            buttonChange.Visible = true;
+            buttonChange.Enabled = true;
         }
 
-        private void 新建挂号ToolStripMenuItem_Click(object sender, EventArgs e)
+        //查询按钮
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-            clear();
-            reflashNo();
-        }
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1 || comboBox3.SelectedIndex == -1 || (comboBox5.SelectedIndex == -1 & checkBox1.Checked == false))
+            if (cardNum.Text == "")
             {
-                MessageBox.Show("关键信息不完整，暂不能打印");
+                MessageBox.Show("请输入诊疗卡号");
             }
             else
-                print();
+            {
+                string cardnum = cardNum.Text;
+                string query = "SELECT COUNT(*) FROM `HIS`.`Patient` WHERE `CardNum`='" + cardnum + "'";
+                int countResult = sql.count(query);
+                if (countResult >= 1)
+                {   
+                    query = "SELECT * FROM `HIS`.`Patient` WHERE `CardNum`='" + cardnum + "'";
+                    MySqlDataReader searchResult = sql.searchData(query);
+                    while (searchResult.Read())
+                    {
+                        paName.Text = searchResult["paName"].ToString();
+                        string paSexNum = searchResult["paSex"].ToString();
+                        if (paSexNum == "1") paSex.Text = "男"; else paSex.Text = "女";
+                        string paBorthStr = searchResult["paBorth"].ToString(); if (paBorthStr != "") paBorth.Value = Convert.ToDateTime(paBorthStr);
+                        if (searchResult["paIDType"].ToString() != "") paIDType.SelectedIndex = Convert.ToInt32(searchResult["paIDType"].ToString());
+                        paID.Text = searchResult["paID"].ToString();
+                        paAddress.Text = searchResult["paAddress"].ToString();
+                        paAllergy.Text = searchResult["paAllergy"].ToString();
+                        paAge.Text = searchResult["paAge"].ToString();
+                        paPhone.Text = searchResult["paPhone"].ToString();
+                    }
+                    sql.closeConnection();
+                }
+                else
+                {
+                    MessageBox.Show("未查询到此诊疗卡");
+                }
+            }
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void buttonNew_Click(object sender, EventArgs e)
         {
+            int paSexInt = 1;
+            if (paSex.Text == "男")
+                paSexInt = 1;
+            else
+                paSexInt = 2;
+            if (paID.Text == "")
+            {
+                MessageBox.Show("不允许证件号为空");
+            }
+            else
+            {
+                string cardNumber = System.DateTime.Now.ToString("yyyyMMddHHmmss") + paID.Text.Substring(paID.Text.Length - 4);
+                cardNum.Text = cardNumber;
+                string query = "INSERT INTO `patient` (`CardNum`, `paName`, `paSex`, `paBorth`, `paIDType`, `paID`, `paAge`, `paPhone`, `paAddress`, `paAllergy`) VALUES ('" + cardNum.Text + "', '" + paName.Text + "', '" + paSexInt + "', '" + paBorth.Value.ToString() + "', '" + paIDType.SelectedIndex + "', '" + paID.Text + "', '" + paAge.Text + "', '" + paPhone.Text + "', '" + paAddress.Text + "', '" + paAllergy.Text + "')";
+                bool addResult = sql.addDate(query);
+                if (addResult == true)
+                {
+                    buttonChange.Enabled = true;
+                    buttonChange.Visible = true;
+                    buttonNew.Enabled = false;
+                    buttonNew.Visible = false;
+                    buttonSearch.Enabled = true;
+                    buttonSearch.Visible = true;
+                    MessageBox.Show("新建诊疗卡成功");
+                }
+                else
+                    MessageBox.Show("出现错误");
+            }
+        }
+
+        private void newcard_Click(object sender, EventArgs e)
+        {
+            clear();
+            buttonNew.Visible = true;
+            buttonNew.Enabled = true;
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            int paSexInt = 1;
+            if (paSex.Text == "男")
+                paSexInt = 1;
+            else
+                paSexInt = 2;
+
+            string query = "UPDATE `patient` SET `paName`='" + paName.Text + "',`paSex`='" + paSexInt + "',`paBorth`='" + paBorth.Value.ToString() + "',`paIDType`='" + paIDType.SelectedIndex + "',`paID`='" + paID.Text + "',`paAge`='" + paAge.Text + "',`paPhone`='" + paPhone.Text + "',`paAllergy`='" + paAllergy.Text + "',`paAddress`='" + paAddress.Text + "' WHERE (`CardNum`='" + cardNum.Text + "') LIMIT 1";
+            int updateResult = sql.update(query);
+            switch (updateResult)
+            {
+
+                case -1:; break;
+                case -2:; break;
+                case 1: MessageBox.Show("更新成功"); break;
+
+            }
+
 
         }
 
-        private void label27_Click(object sender, EventArgs e)
+        private void searchRegToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
+            clear();
+            clearReg();
+            regID.Enabled = true;
+            regSearchButton.Enabled = true;
+            regSearchButton.Visible = true;
 
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
+      
+
+
 
         }
 
-        private void label28_Click(object sender, EventArgs e)
+        private void newRegToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clearReg();
+            makeRegButton.Visible = true;
+            makeRegButton.Enabled = true;
+            regClassType.Items.Clear();
+            regClassType.SelectedIndex = -1;
+            string query = "SELECT DISTINCT classType FROM `classanddoctor` WHERE 1";
+            MySqlDataReader Result = sql.searchData(query);
+            while (Result.Read())
+            {
+                string cod = Result["classType"].ToString();
+                regClassType.Items.Add(cod);
+            }
+            sql.closeConnection();
+            regClassType.Enabled = true;
+            regCostType.Enabled = true;
+            regPayType.Enabled = true;
+        }
+
+
+
+        private void regClassType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (regClassType.SelectedIndex == -1) { }
+            else
+            {
+                regClass.Items.Clear();
+                regClass.SelectedIndex = -1;
+                regClass.Enabled = false;
+                regClass.Text = "";
+                regDoctor.Items.Clear();
+                regDoctor.SelectedIndex = -1;
+                regDoctor.Enabled = false;
+                regDoctor.Text = "";
+                regLevel.SelectedIndex = -1;
+                regLevel.Enabled = false;
+                regLevel.Text = "";
+                string classType = regClassType.SelectedItem.ToString();
+                string query = "SELECT DISTINCT class FROM `ClassAndDoctor` WHERE `classType` = '" + classType + "'";
+                MySqlDataReader mdr = sql.searchData(query);
+                while (mdr.Read())
+                {
+                    string cate = mdr["class"].ToString();
+                    regClass.Items.Add(cate);
+                }
+                sql.closeConnection();
+                regClass.Enabled = true;
+                if (regClass.Items.Count == 0)
+                    regClass.SelectedIndex = -1;
+                else
+                {
+                    regClass.SelectedIndex = 0;
+                    regClass.Enabled = true;
+                }
+            }
+        }
+
+        private void regClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (regClass.SelectedIndex == -1)
+            { }
+            else
+            {
+                regDoctor.Items.Clear();
+                regDoctor.Enabled = false;
+                regDoctor.SelectedIndex = -1;
+                regDoctor.Text = "";
+                regLevel.SelectedIndex = -1;
+                regLevel.Text = "";
+                regLevel.Enabled = true;
+                regLevel.SelectedIndex = 0;
+            }
+        }
+
+        private void regLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (regLevel.SelectedIndex == -1 || status == 1) { }
+            else
+            {
+                regDoctor.Enabled = false;
+                regDoctor.Items.Clear();
+                regDoctor.SelectedIndex = -1;
+                regDoctor.Text = "";
+                int levelIndex = regLevel.SelectedIndex;
+                string regClassString = regClass.SelectedItem.ToString();
+                string query = "";
+              
+                query = "SELECT DISTINCT ID,name FROM `ClassAndDoctor` WHERE `class` = '" + regClassString + "' AND `level` = '" + (levelIndex+1) + "'";
+                Console.WriteLine(query);
+                MySqlDataReader mdr = sql.searchData(query);
+                if (mdr == null)
+                { MessageBox.Show("该科室没有该级别的医师"); }
+                else
+                {
+                    while (mdr.Read())
+                    {
+                        string id = mdr["ID"].ToString();
+                        string name = mdr["name"].ToString();
+                        string doctor = name + " " + id;
+                        regDoctor.Items.Add(doctor);
+                    }
+                    sql.closeConnection();
+                    //regLevel.Enabled = true;
+                    regDoctor.Enabled = true;
+                }
+                Console.WriteLine("医生统计为" + regDoctor.Items.Count.ToString()
+                    );
+                if (regDoctor.Items.Count == 0)
+                {
+                    regDoctor.SelectedIndex = -1;
+                    regCostType.SelectedIndex = -1;
+                    //regCostType.Enabled = false;
+                    regCostType.Text = "";
+                    regDateTimePicker.Enabled = false;
+                    regIfWork.Clear();
+                    regIfWork.Enabled = false;
+                    regRemainNum.Clear();
+                    regRemainNum.Enabled = false;
+                    timeChoose.Items.Clear();
+                    timeChoose.SelectedIndex = -1;
+                    timeChoose.Text = "";
+                    timeChoose.Enabled = false;
+                    checkBox1.Checked = checkBox3.Checked = checkBox1.Enabled = checkBox3.Enabled = timeChoose.Enabled = false;
+                }
+                else regDoctor.SelectedIndex = 0;
+            }
+
+        }
+
+        private void regDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (regDoctor.SelectedIndex == -1)
+            {
+                Console.WriteLine("触发了医生索引为-1");
+                regCostType.SelectedIndex = -1;
+                //regCostType.Enabled = false;
+                regCostType.Text = "";
+                regDateTimePicker.Enabled = false;
+                regIfWork.Clear();
+                regIfWork.Enabled = false;
+                regRemainNum.Clear();
+                regRemainNum.Enabled = false;
+                timeChoose.Items.Clear();
+                timeChoose.SelectedIndex = -1;
+                timeChoose.Text = "";
+                timeChoose.Enabled = false;
+                checkBox1.Checked = checkBox3.Checked = checkBox1.Enabled = checkBox3.Enabled = timeChoose.Enabled = false;
+                regID.Text = "";
+            }
+            else
+            {
+                regDateTimePicker.Value = new DateTime(2020, 01, 01);
+                regDateTimePicker.Value = System.DateTime.Now;
+                regDateTimePicker.Enabled = true;
+            }
+
+        }
+
+        int status = 0;
+
+        private void regDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            regIfWork.Clear();
+            regIfWork.Enabled = false;
+            regRemainNum.Clear();
+            regRemainNum.Enabled = false;
+            timeChoose.Items.Clear();
+            timeChoose.SelectedIndex = -1;
+            checkBox1.Checked = checkBox3.Checked = checkBox1.Enabled = checkBox3.Enabled = timeChoose.Enabled = false;
+
+            if (regDateTimePicker.Value.Date < System.DateTime.Now.Date || status == 1)
+            { }
+            else
+            {
+                string query = "SELECT COUNT(*) FROM `regandduty`  WHERE `data`='" + regDateTimePicker.Value.Date.ToString() + "' AND `doctorID`='" + regDoctor.SelectedItem.ToString().Split(' ')[1] + "'";
+                Console.WriteLine(query);
+                int ifwork = sql.count(query);
+                Console.WriteLine(ifwork);
+                if (ifwork == 0)
+                {
+                    regIfWork.Text = "不开诊";
+                    regRemainNum.Text = "-1";
+                    timeChoose.Items.Clear();
+                    timeChoose.Text = "";
+                    checkBox1.Enabled = checkBox1.Checked = checkBox3.Checked = checkBox3.Enabled = false;
+                    timeChoose.Items.Clear(); timeChoose.SelectedItem = -1; timeChoose.Enabled = false;
+                    regID.Text = "";
+
+                }
+                else if (ifwork > 0)
+                {
+                    regIfWork.Text = "当日开诊";
+                    query = "SELECT COUNT(*) FROM `regandduty`  WHERE `data`='" + regDateTimePicker.Value.Date.ToString() + "' AND `doctorID`='" + regDoctor.SelectedItem.ToString().Split(' ')[1] + "' AND `ifUse`='0' ";
+                    Console.WriteLine(query);
+                    int countNotUse = sql.count(query);
+                    Console.WriteLine(countNotUse);
+                    if (countNotUse == 0)
+                    {
+                        regRemainNum.Text = "0";
+                        timeChoose.SelectedItem = -1;
+                        timeChoose.Items.Clear();
+                        timeChoose.Text = "";
+                        timeChoose.Enabled = false;
+                        checkBox1.Enabled = true;
+                        checkBox3.Enabled = true;
+                        regID.Text = "";
+                    }
+                    else
+                    {
+                        regRemainNum.Text = countNotUse.ToString();
+                        query = "SELECT * FROM `regandduty`  WHERE `data`='" + regDateTimePicker.Value.Date.ToString() + "' AND `doctorID`='" + regDoctor.SelectedItem.ToString().Split(' ')[1] + "' AND `ifUse`='0' ";
+                        MySqlDataReader mdr = sql.searchData(query);
+                        int i = 0;
+
+                        while (mdr.Read())
+                        {
+                            timeChoose.Items.Add(mdr["time"].ToString());
+                            regIDShuzu[i] = mdr["regID"].ToString();
+                            Console.WriteLine("from mdr read" + regIDShuzu[i]);
+                            i++;
+                        }
+                        timeChoose.SelectedIndex = -1;
+                        timeChoose.SelectedIndex = 0;
+                        timeChoose.Enabled = true;
+                    }
+                }
+
+            }
+        }
+
+        private void timeChoose_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (timeChoose.SelectedIndex == -1)
+            { }
+            else
+            {
+
+                regID.Text = regIDShuzu[timeChoose.SelectedIndex];
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false && status == 0)
+            {
+                regID.Text = "";
+            }
+            else
+            { if (status == 1)
+                { }
+                else
+                    regID.Text = cardNum.Text + regDoctor.Text.Split(' ')[1] + System.DateTime.Now.Date.ToString().Split(' ')[0];
+            }
+        }
+
+        private void makeRegButton_Click(object sender, EventArgs e)
+        {
+            if (cardNum.Text == "")
+            {
+                MessageBox.Show("病历号不能为空");
+            }
+            else
+            {
+                if (regDoctor.SelectedItem.ToString() == "")
+                {
+                    MessageBox.Show("请选择医生");
+                }
+                else
+                {
+                    if (regIfWork.Text == "当日不开诊")
+                    {
+                        MessageBox.Show("医生当日不开诊");
+                    }
+                    else
+                    {
+                        if (regRemainNum.Text == "0" && checkBox1.Checked == false)
+                        {
+                            MessageBox.Show("该医生当日已经无余号，如需加号请勾选加号");
+                        }
+                        else if (regRemainNum.Text == "0" && checkBox1.Checked == true)
+                        {
+                            if (regID.Text == "")
+                            { MessageBox.Show("系统异常，未生成就诊号"); }
+                            else
+                            {
+                                if (regCostType.SelectedIndex == -1)
+                                { MessageBox.Show("请选择费别"); }
+                                else if (regPayType.SelectedIndex == -1)
+                                {
+                                    MessageBox.Show("请选择支付方式");
+
+                                }
+                                else
+                                {
+                                    regID.Text = cardNum.Text + regDoctor.Text.Split(' ')[1] + System.DateTime.Now.Date.ToString().Split(' ')[0];
+                                    //加号
+                                    string query = "INSERT INTO `regandduty` (`regID`, `doctorID`,`paiID`,`data`,`time`,`ifUse`,`treatstatus`,`regpay`,`level`,`regtype`,`paytype`) VALUES ('" + regID.Text + "', '" + regDoctor.Text.Split(' ')[1] + "','" + cardNum.Text + "','" + regDateTimePicker.Value.Date.ToString() + "','20:00:00','1','0','" + textBox2.Text + "','" + regLevel.Text + "','" + regCostType.Text + "','" + regPayType.Text + "');";
+                                    if (sql.addDate(query) == true)
+                                    {
+                                        if (MessageBox.Show("加号成功，是否打印", "tip", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                                        {
+                                            //regid,cardnum,classtype,classname,level,costtype,ifjiahao,paname,doname,sex,time,paytype,regpay
+                                            string regid = regID.Text;
+                                            string cardnum = cardNum.Text;
+                                            string classtype = regClassType.Text;
+                                            string classname = regClass.Text;
+                                            string level = regLevel.Text;
+                                            string costtype = regCostType.Text;
+                                            string ifjiahao = "是";
+                                            string paname = paName.Text;
+                                            string doname = regDoctor.Text.Split(' ')[0];
+                                            string sex = paSex.Text;
+                                            string time = "加号";
+                                            string paytype = regPayType.Text;
+                                            string regpay = textBox2.Text;
+                                            Console.WriteLine("开始打印");
+                                            new printReg(regid, cardnum, classtype, classname, level, costtype, ifjiahao, paname, doname, sex, time, paytype, regpay).Show();
+                                        }
+                                        else { }
+                                        clearReg();
+                                        clear();
+                                    }
+                                }
+                            }
+                        }
+                        else if (regRemainNum.Text != "0" && regRemainNum.Text != "-1")
+                        {
+                            if (timeChoose.SelectedIndex == -1)
+                            {
+                                MessageBox.Show("请选择挂号时间");
+                            }
+                            else
+                            {
+
+                                if (regCostType.SelectedIndex == -1)
+                                {
+                                    MessageBox.Show("请选择费别");
+                                }
+                                else 
+                                {
+                                    if (regPayType.SelectedIndex == -1)
+                                    {
+                                        MessageBox.Show("请选择支付方式");
+                                    }
+                                    else
+                                    {
+                                        string id = regID.Text.ToString();
+                                        Console.WriteLine(id);
+                                        //正常挂号
+                                        string updateReg = "UPDATE `regandduty` set `ifUse`='1', `paiID`='" + cardNum.Text + "',`regpay`='"+textBox2.Text+"',`level`='"+regLevel.Text+"',`regtype`='"+regCostType.Text+"',`paytype`='"+regPayType.Text+"'  WHERE `regID`='" + id + "'";
+                                        if (sql.update(updateReg) == 1)
+                                        {
+                                            if (MessageBox.Show("挂号成功，是否打印", "tip", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                                            {
+                                                Console.WriteLine("开始打印");
+                                                string regid = regID.Text;
+                                                string cardnum = cardNum.Text;
+                                                string classtype = regClassType.Text;
+                                                string classname = regClass.Text;
+                                                string level = regLevel.Text;
+                                                string costtype = regCostType.Text;
+                                                string ifjiahao = "否";
+                                                string paname = paName.Text;
+                                                string doname = regDoctor.Text.Split(' ')[0];
+                                                string sex = paSex.Text;
+                                                string time = timeChoose.Text;
+                                                string paytype = regPayType.Text;
+                                                string regpay = textBox2.Text;
+                                                Console.WriteLine("开始打印");
+
+                                                new printReg(regid, cardnum, classtype, classname, level, costtype, ifjiahao, paname, doname, sex, time, paytype, regpay).Show();
+
+
+
+                                            }
+                                            else { }
+                                            clearReg();
+                                            clear();
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        int howtocancel = -1;
+        private void regSearchButton_Click(object sender, EventArgs e)
+        {
+
+            if (regID.Text == "")
+            {
+                MessageBox.Show("请输入就诊号");
+            }
+            else
+            {
+                status = 1;
+                string query = "SELECT COUNT(*) FROM `regandduty`  WHERE `regID`='" + regID.Text + "' AND  `ifUse` ='1'";
+                Console.WriteLine(sql.count(query));
+                if (sql.count(query) == 0)
+                {
+                    MessageBox.Show("未查询到挂号记录");
+                  /*  Console.WriteLine("第一次查询为0");
+                    query = "SELECT COUNT(*) FROM `addReg`  WHERE `regID`='" + regID.Text + "'";
+                    if (sql.count(query) == 0)
+                    {
+                        MessageBox.Show("未找到该就诊号记录");
+                    }
+                    else
+                    {
+                        howtocancel = 0;
+                        checkBox1.Checked = true;
+
+                        query = "SELECT DISTINCT doctorID,paiID,data FROM `addReg` WHERE `regID` = '" + regID.Text + "'";
+                        MySqlDataReader mdr = sql.searchData(query);
+                        string pai = ""; string doc = "";
+                        while (mdr.Read())
+                        {
+                            regDateTimePicker.Value = Convert.ToDateTime(mdr["data"].ToString());
+                            pai = mdr["paiID"].ToString();
+                            doc = mdr["doctorID"].ToString();
+                            regDateTimePicker.Value = Convert.ToDateTime(mdr["data"].ToString());
+                        }
+
+                        search.PerformClick();
+                        cardNum.Text = pai;
+                        buttonSearch.PerformClick();
+                        status = 1;
+
+                        query = "SELECT  * FROM `classanddoctor` WHERE `ID`='" + doc + "'";
+                        mdr = sql.searchData(query);
+                        while (mdr.Read())
+                        {
+                            regClassType.Text = mdr["classType"].ToString();
+                            regClass.Text = mdr["class"].ToString();
+                            regLevel.SelectedIndex = Convert.ToInt32(mdr["level"].ToString());
+                        }
+                        cancelRegButton.Visible = true;
+                        cancelRegButton.Enabled = true;
+
+                    }*/
+                }
+                else
+                {
+                    howtocancel = 1;
+                    query = "SELECT DISTINCT doctorID,paiID,data,time FROM `regandduty` WHERE `regID` = '" + regID.Text + "'";
+                    MySqlDataReader mdr = sql.searchData(query);
+                    string pai = ""; string doc = "";
+                    while (mdr.Read())
+                    {
+                        pai = mdr["paiID"].ToString();
+                        doc = mdr["doctorID"].ToString();
+                        regDateTimePicker.Value = Convert.ToDateTime(mdr["data"].ToString());
+                        timeChoose.Text = mdr["time"].ToString();
+                    }
+                    sql.closeConnection();
+                    search.PerformClick();
+                    cardNum.Text = pai;
+                    buttonSearch.PerformClick();
+                    status = 1;
+
+                    query = "SELECT  * FROM `classanddoctor` WHERE `ID`='" + doc + "'";
+                    mdr = sql.searchData(query);
+                    while (mdr.Read())
+                    {
+                        regClassType.Text = mdr["classType"].ToString();
+                        regClass.Text = mdr["class"].ToString();
+                        regLevel.SelectedIndex = Convert.ToInt32(mdr["level"].ToString());
+                    }
+                    cancelRegButton.Visible = true;
+                    cancelRegButton.Enabled = true;
+
+
+                }
+            }
+        }
+
+        private void cancelRegButton_Click(object sender, EventArgs e)
+        {
+            if (howtocancel == -1)
+            {
+                MessageBox.Show("系统异常，在未查找到信息的情况下不能删除");
+            }
+            else if (howtocancel == 1)
+            {
+                string updateReg = "UPDATE `regandduty` set `ifUse`='0', `paiID`='' WHERE `regID`='" + regID.Text + "'";
+                if (sql.update(updateReg) == 1)
+                {
+                    MessageBox.Show("退号成功");
+                    clear();
+                    clearReg();
+                }
+            }
+            else if (howtocancel == 0)
+            {
+                string delquery = "DELETE FROM `addReg` WHERE `RegID`='" + regID.Text + "'";
+                if (sql.del(delquery))
+                {
+                    MessageBox.Show("退号成功");
+                    clearReg(); clear();
+                }
+            }
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox1.SelectedIndex = -1;
+            comboBox1.Text = "";
+            string query = "SELECT DISTINCT classType FROM `ClassAndDoctor` WHERE 1";
+            MySqlDataReader Result = sql.searchData(query);
+            while (Result.Read())
+            {
+                string cod = Result["classType"].ToString();
+                comboBox1.Items.Add(cod);
+            }
+            sql.closeConnection();
+        }
+
+
+        //重绘列值
+
+
+
+        //查询科室信息
+        private void buttonCountClass_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == -1 && comboBox1.Text == "")
+            {
+                MessageBox.Show("请选择科室类别");
+            }
+            else
+            {
+                string classtype = comboBox1.SelectedItem.ToString();
+
+            
+                MySqlCommand cmd = null;
+                MySqlDataAdapter dpt = null;
+                mySql sql = new mySql();
+                DataSet ds = new DataSet();
+                DataTable dtb = null;
+
+
+                sql.openConnetction();
+
+                cmd = new MySqlCommand("SELECT ID,name,classType,class,case when `level` = '1' then '专家'when `level` = '2' then '主任医师'when `level` = '3'then '副主任医师' WHEN  `level`= '4' THEN '医师'end as `level`  FROM classanddoctor WHERE classType='"+classtype+"'", sql.conn);
+
+                dpt = new MySqlDataAdapter(cmd);
+                dpt.Fill(ds);
+                dtb = ds.Tables[0];
+                dataGridView1.DataSource = dtb;
+
+
+                this.dataGridView1.AutoGenerateColumns = false;
+
+                this.dataGridView1.Columns["Column1"].DataPropertyName = dtb.Columns["classType"].ToString();
+
+                this.dataGridView1.Columns["Column2"].DataPropertyName = dtb.Columns["class"].ToString();
+
+                this.dataGridView1.Columns["Column3"].DataPropertyName = dtb.Columns["ID"].ToString();
+
+                this.dataGridView1.Columns["Column4"].DataPropertyName = dtb.Columns["name"].ToString();
+
+                this.dataGridView1.Columns["Column5"].DataPropertyName = dtb.Columns["level"].ToString();
+               
+                this.dataGridView1.Columns["classType"].Visible = false;
+                this.dataGridView1.Columns["class"].Visible = false;
+                this.dataGridView1.Columns["ID"].Visible = false;
+                this.dataGridView1.Columns["name"].Visible = false;
+                this.dataGridView1.Columns["level"].Visible = false;
+
+
+
+
+
+
+
+
+
+
+            }
+        }
+
+        //查询医生排班信息
+        private void button13_Click(object sender, EventArgs e)
+        {
+            {
+                if (textBox12.Text == "")
+                {
+                    MessageBox.Show("请输入医生工号");
+                }
+                else
+                {
+                    dataGridView2.DataSource = null;
+                    string query = "SELECT  doctorID,data,time,classanddoctor.class,classanddoctor.name,classanddoctor.phone FROM  `regandduty` INNER JOIN `classanddoctor` ON regandduty.doctorID=classanddoctor.ID WHERE `data`='" + dateTimePicker1.Value.Date.ToString() + "' AND `doctorID`='" + textBox12.Text + "'";
+
+                    
+
+                    MySqlCommand cmd = null;
+                    MySqlDataAdapter dpt = null;
+                    mySql sql = new mySql();
+                    DataSet ds = new DataSet();
+                    DataTable dtb = null;
+
+
+                    sql.openConnetction();
+
+                    cmd = new MySqlCommand(query, sql.conn);
+
+                    dpt = new MySqlDataAdapter(cmd);
+                    dpt.Fill(ds);
+                    dtb = ds.Tables[0];
+                    dataGridView2.DataSource = dtb;
+
+
+                    this.dataGridView2.AutoGenerateColumns = false;
+
+                    this.dataGridView2.Columns["Column6"].DataPropertyName = dtb.Columns["data"].ToString();
+
+                    this.dataGridView2.Columns["Column7"].DataPropertyName = dtb.Columns["time"].ToString();
+
+                    this.dataGridView2.Columns["Column8"].DataPropertyName = dtb.Columns["class"].ToString();
+
+                    this.dataGridView2.Columns["Column9"].DataPropertyName = dtb.Columns["doctorID"].ToString();
+
+                    this.dataGridView2.Columns["Column10"].DataPropertyName = dtb.Columns["name"].ToString();
+                    this.dataGridView2.Columns["Column11"].DataPropertyName = dtb.Columns["phone"].ToString();
+
+                    
+                    this.dataGridView2.Columns["data"].Visible = false;
+                    this.dataGridView2.Columns["time"].Visible = false;
+                    this.dataGridView2.Columns["class"].Visible = false;
+                    this.dataGridView2.Columns["doctorID"].Visible = false;
+                    this.dataGridView2.Columns["name"].Visible = false;
+                    this.dataGridView2.Columns["phone"].Visible = false;
+                    
+
+
+
+
+
+
+
+
+                }
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+            //string query = "SELECT  regID,doctorID,paiID，data,time FROM `regandduty` WHERE `data`='" + dateTimePicker2.Value.Date.ToString() + "' AND `ifUse`='1'";
+            string query = "SELECT regandduty.regID,patient.paName,classanddoctor.class,classanddoctor.`name`,regandduty.`level`,regandduty.regtype,case WHEN time='20:00:00' THEN '是' WHEN time!='20:00:00' THEN '否' end AS `ifjiahao`,regandduty.time,regandduty.paytype,regandduty.regpay  FROM regandduty INNER JOIN patient ON regandduty.paiID=patient.CardNum INNER JOIN classanddoctor ON regandduty.doctorID=classanddoctor.ID WHERE regandduty.data='"+dateTimePicker2.Value.Date.ToString()+"' AND regandduty.ifUse='1'";
+            Console.WriteLine(query);
+            MySqlCommand cmd = null;
+            MySqlDataAdapter dpt = null;
+            mySql sql = new mySql();
+            DataSet ds = new DataSet();
+            DataTable dtb = null;
+
+
+            sql.openConnetction();
+
+            cmd = new MySqlCommand(query, sql.conn);
+
+            dpt = new MySqlDataAdapter(cmd);
+            dpt.Fill(ds);
+            dtb = ds.Tables[0];
+            dataGridView4.DataSource = dtb;
+
+
+            this.dataGridView4.AutoGenerateColumns = false;
+
+            this.dataGridView4.Columns["Column12"].DataPropertyName = dtb.Columns["regID"].ToString();
+
+            this.dataGridView4.Columns["Column14"].DataPropertyName = dtb.Columns["paName"].ToString();
+
+            this.dataGridView4.Columns["Column15"].DataPropertyName = dtb.Columns["class"].ToString();
+
+            this.dataGridView4.Columns["Column13"].DataPropertyName = dtb.Columns["name"].ToString();
+            this.dataGridView4.Columns["Column17"].DataPropertyName = dtb.Columns["regtype"].ToString();
+            this.dataGridView4.Columns["Column18"].DataPropertyName = dtb.Columns["level"].ToString();
+            this.dataGridView4.Columns["Column19"].DataPropertyName = dtb.Columns["ifjiahao"].ToString();
+            this.dataGridView4.Columns["Column20"].DataPropertyName = dtb.Columns["time"].ToString();
+            this.dataGridView4.Columns["Column21"].DataPropertyName = dtb.Columns["paytype"].ToString();
+            this.dataGridView4.Columns["Column22"].DataPropertyName = dtb.Columns["regpay"].ToString();
+            //this.dataGridView4.Columns["Column19"].DataPropertyName = dtb.Columns["ifjiahao"].ToString();
+            this.dataGridView4.Columns["regID"].Visible = false;
+            this.dataGridView4.Columns["paName"].Visible = false;
+            this.dataGridView4.Columns["class"].Visible = false;
+            this.dataGridView4.Columns["name"].Visible = false;
+
+            this.dataGridView4.Columns["level"].Visible = false;
+            this.dataGridView4.Columns["regtype"].Visible = false;
+            this.dataGridView4.Columns["ifjiahao"].Visible = false;
+            this.dataGridView4.Columns["time"].Visible = false;
+            this.dataGridView4.Columns["paytype"].Visible = false;
+            this.dataGridView4.Columns["regpay"].Visible = false;
+        }
+
+        private void printRegButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        private void regCostType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int levelpay = 0;
+            if (regLevel.SelectedIndex == -1)
+            {
+
+            }
+            else if (regLevel.SelectedIndex == 0)
+            {
+                levelpay = 10;
+            }
+            else if (regLevel.SelectedIndex == 1)
+            {
+                levelpay = 20;
+            }
+            else if (regLevel.SelectedIndex == 2)
+            {
+                levelpay = 15;
+            }
+            else if (regLevel.SelectedIndex == 3)
+            {
+                levelpay = 10;
+            }
+            else if (regLevel.SelectedIndex == 4)
+            {
+                levelpay = 5;
+            }
+
+            int typepay = 0;
+            if (regCostType.SelectedIndex == 0)
+            {
+                typepay = 10;
+            }
+            else if (regCostType.SelectedIndex == 1)
+            {
+                typepay = 15;
+            }
+            else if (regCostType.SelectedIndex == 2)
+            {
+                typepay = 20;
+            }
+
+            int sum = levelpay + typepay;
+            textBox2.Text = sum.ToString();
+
 
         }
-   
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("请输入医生工号");
+            }
+            else
+            {
+                dataGridView3.Rows.Clear();
+                string query = "SELECT regandduty.`data`,classanddoctor.class,classanddoctor.`name`,COUNT(*),sum(regpay) FROM regandduty INNER JOIN classanddoctor ON regandduty.doctorID=classanddoctor.ID WHERE regandduty.doctorID='" + textBox1.Text + "' AND regandduty.ifUse='1' AND regandduty.`data`='" + dateTimePicker3.Value.Date.ToString() +"'";
+                mySql sql = new mySql();
+
+                MySqlDataReader mdr = sql.searchData(query);
+
+                int i = 0;
+                while (mdr.Read())
+                {
+                    dataGridView3.Rows.Add();
+                    dataGridView3.Rows[i].Cells["Column16"].Value = Convert.ToDateTime(mdr["data"].ToString()).Date.ToString("yyyy-MM-dd"); ;
+                    dataGridView3.Rows[i].Cells["Column23"].Value = mdr["class"].ToString();
+                    dataGridView3.Rows[i].Cells["Column24"].Value = mdr["name"].ToString();
+                    dataGridView3.Rows[i].Cells["Column25"].Value = mdr["COUNT(*)"].ToString();
+                    dataGridView3.Rows[i].Cells["Column26"].Value = mdr["sum(regpay)"].ToString();
+                    i++;
+
+                }
+            }
+        }
     }
-
-  
 }

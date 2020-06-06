@@ -11,25 +11,12 @@ using System.Windows.Forms;
 
 namespace ver1._0
 {
-    public partial class ChangePasswd : Form
+    public partial class changePasswd : Form
     {
-       
-        public ChangePasswd()
+
+        public changePasswd()
         {
             InitializeComponent();
-        }
-
-        private string md5_passwd(string passwd)
-        {
-            byte[] result = Encoding.Default.GetBytes(passwd);
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] newBuffer = md5.ComputeHash(result);
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < newBuffer.Length; i++)
-            {
-                sb.Append(newBuffer[i].ToString("x2"));
-            }
-            return sb.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,8 +25,9 @@ namespace ver1._0
             string passwd = textBox2.Text;
             string firstNew = textBox3.Text;
             string secondNew = textBox4.Text;
-            string md5Old = md5_passwd(passwd);
-            string md5New = md5_passwd(firstNew);
+            md5 md = new md5();
+            string md5Old = md.md5_passwd(passwd);
+            string md5New = md.md5_passwd(firstNew);
 
             if (firstNew != secondNew)
             {
@@ -48,7 +36,7 @@ namespace ver1._0
             else
             {
                 mySql mysql = new mySql();
-                string query = "SELECT COUNT(*) FROM `User`  WHERE `name`='" + name + "' AND `passwd`='" + md5Old + "'";
+                string query = "SELECT COUNT(*) FROM `user`  WHERE `name`='" + name + "' AND `passwd`='" + md5Old + "'";
                 int returnNumber = mysql.count(query);
                 if (returnNumber == -2)
                 {
@@ -67,7 +55,7 @@ namespace ver1._0
                     if (returnNumber == 1)
                     {
                         //change number
-                        string updatePasswd = "UPDATE `User` set passwd='" + md5New + "' WHERE name='" + name + "'";
+                        string updatePasswd = "UPDATE `user` set passwd='" + md5New + "' WHERE name='" + name + "'";
                         mysql.update(updatePasswd);
                         MessageBox.Show("改密成功");
                         textBox2.Clear();
@@ -82,6 +70,12 @@ namespace ver1._0
                 }
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //new sigh().Show();
+            this.Close();
         }
     }
 }

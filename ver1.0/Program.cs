@@ -16,7 +16,7 @@ namespace ver1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sigh());
+            Application.Run(new sigh());
         }
     }
 }
